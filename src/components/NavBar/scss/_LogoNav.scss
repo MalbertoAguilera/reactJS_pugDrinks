@@ -1,0 +1,22 @@
+.contenedorLogo{
+      font-family: $font-family3;
+      color: white;
+      display: flex;
+
+      .imagenLogo{
+            width: 15rem;
+            height: 15rem;
+      }
+
+      .contenedorTitulo{
+            align-self: center;
+            justify-self: center;
+
+            .tituloLogo{
+                  font-size: 4rem;
+                  
+            }
+      }
+
+      
+}
