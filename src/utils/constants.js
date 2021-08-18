@@ -1,0 +1,1 @@
+export const pathImagenStock = "../assets/img/stock"
