@@ -3,7 +3,7 @@ const cargarDatos = (data) => {
       return new Promise ((resolve, rejected) => {
             setTimeout(() => {
                   resolve(data);     
-            }, 5000);
+            }, 2000);
       });
 }
 
