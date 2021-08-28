@@ -1,10 +1,13 @@
 import React from "react";
 import './Loader.scss';
+import { Spinner } from "react-bootstrap";
 
 const Loader = () => {
   return (
     <div className="contenedorSpinner">
-      <div className="spinner-border text-warning" role="status"></div>
+        <Spinner animation="grow" variant="light" />
+        <Spinner animation="grow" variant="light" />
+        <Spinner animation="grow" variant="light" />
     </div>
   );
 };

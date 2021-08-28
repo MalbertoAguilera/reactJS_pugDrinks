@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer"
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import { Container } from "react-bootstrap";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <NavBar/>
+        <NavBar />
         <Switch>
           <Route exact path="/">
             <ItemListContainer />
@@ -16,14 +17,18 @@ function App() {
           <Route exact path="/category/:catName">
             <ItemListContainer />
           </Route>
-          <Route exact path="/detail/:itemId">
-            <ItemDetailContainer/>
+          <Route exact path="/item/:itemId">
+            <ItemDetailContainer />
           </Route>
           <Route exact path="/cart">
-            <h1>Contenido carrito</h1>
+            <Container>
+              <h1>Contenido carrito</h1>
+            </Container>
           </Route>
           <Route path="*">
-            <h1>ERROR 404</h1>
+            <Container>
+              <h1>Contenido carrito</h1>
+            </Container>
           </Route>
         </Switch>
       </BrowserRouter>

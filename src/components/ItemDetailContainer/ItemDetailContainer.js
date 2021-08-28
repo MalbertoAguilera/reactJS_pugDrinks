@@ -4,6 +4,8 @@ import ItemDetail from './ItemDetail';
 import Loader from './../Loader';
 import getItems from './../../helpers/getItems';
 
+import './ItemDetailContainer.scss'
+
 
 const ItemDetailContainer = () => {
 
@@ -24,7 +26,7 @@ const ItemDetailContainer = () => {
       },[itemId])
 
       return (  
-            <div className = "ContenedorItemListContainer">
+            <div className = "container itemDetailContainer">
                   { loading? <Loader/> : <ItemDetail {...item}/> }
             </div>
       );

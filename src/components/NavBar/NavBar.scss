@@ -1,5 +1,10 @@
 .header{
       .navBar{
+
+            &.bg-dark{
+                  background-color:transparent!important;
+            }
+
             .contenedorNavBar{
                   display: flex;
                   justify-content: space-between;

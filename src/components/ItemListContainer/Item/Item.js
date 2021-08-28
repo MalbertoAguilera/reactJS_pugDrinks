@@ -17,7 +17,7 @@ const Item = ({ id, name, category, price, stock, thumbnailUrl }) => {
         <Card.Body className="cardBody">
           <Card.Title className="titulo">{name}</Card.Title>
           <Card.Text className="precio">${price}</Card.Text>
-          <LinkContainer to={`/detail/${id}`}>
+          <LinkContainer to={`/item/${id}`}>
             <Button className="botonCard">Ver mas...</Button>
           </LinkContainer>
         </Card.Body>

@@ -1,12 +1,13 @@
 .contenedorSpinner{
       width: 100vw;
-      height: 100vh;
+      min-height: 80vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      .spinner-border{
-            width: 100px;
-            height: 100px;
+      .spinner-grow{
+            height: 5rem;
+            width: 5rem;
+            margin: 1rem;
       }
 }
 

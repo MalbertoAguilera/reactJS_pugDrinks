@@ -26,6 +26,8 @@ const ItemListContainer = () => {
                   .finally(() => setLoading(false))
       },[catName])
 
+      console.log(data);
+
       return (  
             <div className = "ContenedorItemListContainer">
                   { loading? <Loader/> : <ItemList stock={data}/> }
