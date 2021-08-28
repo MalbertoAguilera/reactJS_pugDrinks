@@ -1,20 +1,29 @@
-import React from 'react'
-import { Col, Card, Button } from 'react-bootstrap';
-// import {LOCAL_PATH, PATH_IMAGEN_STOCK} from '../../../../utils/constants';
+import React from "react";
+import { Col, Card, Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import { LOCAL_PATH, PATH_IMAGEN_STOCK } from "../../../utils/constants";
 
-const Item = ({id, nombre, tipo, precio, stock, thumbnailUrl}) => {
+import './Item.scss'
 
-
-      return(
-            <Col xs = {3} className = "contenedorCard">
-                  <Card.Img className ="imagen" variant = "top" src = "https://picsum.photos/100?random=1"/>
-                  <Card.Body className ="cardBody">
-                        <Card.Title className ="titulo">{nombre}</Card.Title>
-                        <Card.Text className ="precio">${precio}</Card.Text>
-                        <Button className ="botonCard">Añadir al carrito</Button>
-                  </Card.Body>
-            </Col>   
-      );
-}
+const Item = ({ id, name, category, price, stock, thumbnailUrl }) => {
+  return (
+    <Col xs={3} className="contenedorCard">
+      <div className="subContenedorCard">
+        <Card.Img
+          className="imagen"
+          variant="top"
+          src={`${LOCAL_PATH}/${PATH_IMAGEN_STOCK}/${thumbnailUrl}`}
+        />
+        <Card.Body className="cardBody">
+          <Card.Title className="titulo">{name}</Card.Title>
+          <Card.Text className="precio">${price}</Card.Text>
+          <LinkContainer to={`/detail/${id}`}>
+            <Button className="botonCard">Ver mas...</Button>
+          </LinkContainer>
+        </Card.Body>
+      </div>
+    </Col>
+  );
+};
 
 export default Item;

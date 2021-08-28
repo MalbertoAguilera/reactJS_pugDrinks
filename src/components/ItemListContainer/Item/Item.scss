@@ -1,0 +1,34 @@
+.contenedorCard{
+      font-size: 1.5rem;
+      
+
+      .subContenedorCard{
+            border: 1px gray solid;
+            border-radius: 1rem;
+            margin: 5px;
+            text-align: center;
+
+            .imagen{
+                  width: 150px;
+                  height: 150px;
+            }
+
+            .cardBody{
+            
+                  text-align: center;
+                  
+                  .precio{
+                        color: red;
+                        font-weight: bold;
+                  }
+
+                  .botonCard{
+                        width: 100%;
+                        padding: 1rem;
+                        
+                  }
+            }
+      }
+      
+      
+}
