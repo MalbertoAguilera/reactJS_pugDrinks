@@ -22,12 +22,12 @@ function App() {
           </Route>
           <Route exact path="/cart">
             <Container>
-              <h1>Contenido carrito</h1>
+              <h1>------------Contenido carrito---------</h1>
             </Container>
           </Route>
           <Route path="*">
             <Container>
-              <h1>Contenido carrito</h1>
+              <h1>------------ERROR 404---------------</h1>
             </Container>
           </Route>
         </Switch>

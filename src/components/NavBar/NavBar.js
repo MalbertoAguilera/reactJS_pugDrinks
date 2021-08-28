@@ -1,5 +1,5 @@
 import React from "react";
-import CartWidget from "../CartWidget";
+import CartWidget from "./CartWidget";
 import BrandNav from "./BrandNav";
 import MenuNav from "./MenuNav";
 import { Container, Navbar} from "react-bootstrap";

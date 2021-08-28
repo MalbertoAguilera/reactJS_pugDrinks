@@ -11,12 +11,14 @@
             height: 300px;
       }
       .item-detail__titulo{
-            
+            font-size: 2rem;
+            font-weight: bold;
       }
       .item-detail__precio{
-
+            color: red;
+            font-weight: bold;
       }
       .item-detail__description{
-
+            color: gray;
       }
 }

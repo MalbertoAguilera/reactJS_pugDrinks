@@ -1,9 +1,10 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { LOCAL_PATH, PATH_IMAGEN_STOCK } from "../../../utils/constants";
 import './ItemDetail.scss';
 
-const ItemDetail = ({name, price, thumbnailUrl, description }) => {
+const ItemDetail = ({name, price, thumbnailUrl, description, category }) => {
   return (
       <div className="item-detail">
         <Card.Img
@@ -16,9 +17,8 @@ const ItemDetail = ({name, price, thumbnailUrl, description }) => {
           <Card.Text className="item-detail__precio">${price}</Card.Text>
           <Card.Text className="item-detail__description">{description}</Card.Text>
         </Card.Body>
+        <Link className="btn btn-primary" to={`/category/${category}`}>Volver</Link>
       </div>
-
-    
   );
 };
 

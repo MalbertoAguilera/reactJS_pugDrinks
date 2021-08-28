@@ -1,4 +1,4 @@
-import stock from './../db/stock.json'
+import stock from './../db/stock.json';
 
 const getItems = () => {
       
