@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const ItemCounter = ({initial = 1, stock = 10, amount, onAdd, setAmount}) => {
 

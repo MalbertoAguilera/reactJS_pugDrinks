@@ -1,10 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import Loader from '../Loader';
 import getItems from '../../helpers/getItems';
 import ItemList from './ItemList';
+import {CartContext} from './../../context/CartContext';
 
 const ItemListContainer = () => {
+      
+      const contextObjectAPP = useContext(CartContext);
+      console.log("Desde ItemListContainer, DEVUELVE UN OBJECT: ", contextObjectAPP);
 
       const {catName} = useParams()
       const [data, setData] = useState([]);
