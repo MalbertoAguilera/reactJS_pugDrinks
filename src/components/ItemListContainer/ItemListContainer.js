@@ -3,20 +3,19 @@ import { useParams } from 'react-router-dom';
 import Loader from '../Loader';
 import getItems from '../../helpers/getItems';
 import ItemList from './ItemList';
-import {CartContext} from './../../context/CartContext';
+import { UIContext } from './../../context/UIContext';
+
 
 const ItemListContainer = () => {
-      
-      const contextObjectAPP = useContext(CartContext);
-      console.log("Desde ItemListContainer, DEVUELVE UN OBJECT: ", contextObjectAPP);
 
+      const {loading, setLoading} = useContext(UIContext);
       const {catName} = useParams()
       const [data, setData] = useState([]);
-      const [loading, setLoading] = useState(false);
+      
 
       useEffect(() => {
             setLoading(true);
-
+            
             getItems()
                   .then( res =>{
                         if(catName){
@@ -27,12 +26,12 @@ const ItemListContainer = () => {
                         }
                   })
                   .catch(err => console.log(err))
-                  .finally(() => setLoading(false))
+                  .finally(()=> setLoading(false));
       },[catName])
 
       return (  
             <div className = "ContenedorItemListContainer">
-                  { loading? <Loader/> : <ItemList stock={data}/> }
+                  {loading? <Loader/> : <ItemList stock={data}/>}
             </div>
       );
 }

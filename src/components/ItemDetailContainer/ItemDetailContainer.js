@@ -1,18 +1,14 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router';
 import ItemDetail from './ItemDetail';
 import Loader from './../Loader';
 import getItems from './../../helpers/getItems';
 
 import './ItemDetailContainer.scss'
-import { CartContext } from '../../context/CartContext';
+
 
 
 const ItemDetailContainer = () => {
-
-      const {unaVariable, otraVariable} = useContext(CartContext);
-      console.log("Desde ItemDetailContainer (DESTRUCTURING): ", unaVariable);
-      console.log("Desde ItemDetailContainer (DESTRUCTURING): ", otraVariable);
 
       const {itemId} = useParams();
       const [item, setItem] = useState(null);

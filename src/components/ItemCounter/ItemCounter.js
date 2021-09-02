@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ItemCounter = ({initial = 1, stock = 10, amount, onAdd, setAmount}) => {
+const ItemCounter = ({initial = 1, stock = 10, amount, handleOnAdd, setAmount}) => {
 
       const handleAdd = () =>{
             if(amount < stock)
@@ -15,7 +15,7 @@ const ItemCounter = ({initial = 1, stock = 10, amount, onAdd, setAmount}) => {
             <div>
                   <div>{amount}</div>
                   <button onClick={handleAdd}>+</button>
-                  <button onClick={onAdd}>Agregar al carrito</button>
+                  <button onClick={handleOnAdd}>Agregar al carrito</button>
                   <button onClick={handleSubtract}>-</button>
             </div>
       );
