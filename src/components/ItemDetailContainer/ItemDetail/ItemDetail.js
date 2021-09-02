@@ -1,7 +1,7 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../../context/CartContext";
+import { useCartContext } from "../../../context/CartContext";
 import { LOCAL_PATH, PATH_IMAGEN_STOCK } from "../../../utils/constants";
 import ItemCounter from "../../ItemCounter/index";
 import './ItemDetail.scss';
@@ -15,7 +15,7 @@ const ItemDetail = ({id,name, price, thumbnailUrl, description, category, stock}
   //     setCarrito([...carrito, newItem]);
   // }
 
-  const {addOnCart} = useContext(CartContext);
+  const {addOnCart} = useCartContext;
   const [amount, setAmount] = useState(1);
 
   const handleOnAdd = () =>{
