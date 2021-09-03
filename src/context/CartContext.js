@@ -1,18 +1,15 @@
-import React, {useState, createContext, useContext} from 'react';
-
+import React, {useState, createContext} from 'react';
 
 // 1)CREACION DEL CONTEXTO
-export const CartContext = createContext();
+const CartContext = createContext();
 
-// 2) creacion del context para destructuring
-export const useCartContext = () => useContext(CartContext);
-// 3)creacion de componente CUSTOM PROVIDER
+// 2)creacion de componente CUSTOM PROVIDER
 
-export const CartContextProvider = ({children}) => {
+const CartContextProvider = ({children}) => {
       
       const [cart, setCart] = useState([]);
       
-      const addOnCart = (item)=>{setCart([...cart, item]);};
+      const addItem = (item, quantity)=>{setCart([...cart, {...item, quantity}]);};
       
       const deleteFromCart = (id) =>{setCart(cart.filter(item => item.id !== id));};
 
@@ -21,8 +18,10 @@ export const CartContextProvider = ({children}) => {
       const emptyCart= ()=>{ setCart([])};
             
       return(
-            <CartContext.Provider value={{cart, addOnCart,deleteFromCart,amountCart, emptyCart}}>
+            <CartContext.Provider value={{cart, addItem,deleteFromCart,amountCart, emptyCart}}>
                   {children}
             </CartContext.Provider>
       );
 }
+
+export {CartContextProvider, CartContext};

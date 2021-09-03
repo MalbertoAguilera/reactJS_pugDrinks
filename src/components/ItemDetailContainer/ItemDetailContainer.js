@@ -1,18 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { useParams } from 'react-router';
 import ItemDetail from './ItemDetail';
 import Loader from './../Loader';
 import getItems from './../../helpers/getItems';
 
 import './ItemDetailContainer.scss'
+import { UIContext } from '../../context/UIContext';
 
 
 
 const ItemDetailContainer = () => {
 
+      const {loading, setLoading} = useContext(UIContext);
       const {itemId} = useParams();
       const [item, setItem] = useState(null);
-      const [loading, setLoading] = useState(false);
 
       useEffect(() => {
             setLoading(true);

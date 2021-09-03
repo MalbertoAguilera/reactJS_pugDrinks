@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useContext} from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useCartContext } from "../../../context/CartContext";
+import { CartContext } from "../../../context/CartContext";
 import { LOCAL_PATH, PATH_IMAGEN_STOCK } from "../../../utils/constants";
 import ItemCounter from "../../ItemCounter/index";
 import './ItemDetail.scss';
@@ -15,12 +15,11 @@ const ItemDetail = ({id,name, price, thumbnailUrl, description, category, stock}
   //     setCarrito([...carrito, newItem]);
   // }
 
-  const {addOnCart} = useCartContext;
-  const [amount, setAmount] = useState(1);
+  const {addItem} = useContext(CartContext);
 
-  const handleOnAdd = () =>{
-    const newItem = {id,name,price,category,amount};
-    addOnCart(newItem);
+  const onAdd = (quantity) =>{
+    const newItem = {id,name,price,category};
+    addItem(newItem, quantity);
   }
 
   return (
@@ -35,7 +34,7 @@ const ItemDetail = ({id,name, price, thumbnailUrl, description, category, stock}
           <Card.Text className="item-detail__precio">${price}</Card.Text>
           <Card.Text className="item-detail__description">{description}</Card.Text>
         </Card.Body>
-        <ItemCounter stock={stock} amount={amount} setAmount={setAmount} handleOnAdd={handleOnAdd}/>
+        <ItemCounter initial={1} stock={stock} onAdd={onAdd}/>
         <Link className="btn btn-primary" to={`/category/${category}`}>Volver</Link>
       </div>
   );

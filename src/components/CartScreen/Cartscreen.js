@@ -1,10 +1,10 @@
-import React from 'react';
-import { useCartContext } from '../../context/CartContext';
+import React, { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 import { FaTrashAlt } from 'react-icons/fa';
 
 const CartScreen = () => {
 
-      const {cart,emptyCart, deleteFromCart} = useCartContext;
+      const {cart,emptyCart, deleteFromCart} = useContext(CartContext);
 
       return (  
             <div>
