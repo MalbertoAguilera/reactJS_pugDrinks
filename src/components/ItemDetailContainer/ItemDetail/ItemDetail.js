@@ -36,7 +36,7 @@ const ItemDetail = ({id,name, price, thumbnailUrl, description, category, stock}
             ?<ItemCount initial={1} stock={stock} onAdd={onAdd}/>
             :<div className="my-2"><Link className="btn buttons__finish-buy" to="/cart"> Finalizar Compra</Link></div>
           }
-          <div className="my-3"><Link className="btn buttons__go-back" to={"/"}>Volver</Link></div>
+          <div className="my-3"><Link className="btn buttons__go-back" to={"/"}>Seguir Comprando</Link></div>
         </div>
         
       </div>
