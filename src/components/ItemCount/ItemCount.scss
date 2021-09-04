@@ -1,0 +1,64 @@
+.container-counter{
+      .container-counter__add-button{
+            
+            border-style: none;
+            padding: 1rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+            background-color: darkcyan;
+            color: white;
+            
+            &:active{
+                  transform: scale(0.9);
+            }
+            &:disabled{
+                  background-color: darkgray;
+            }
+      }
+      
+      .counter-display{
+            .counter-display__plus-button{
+                  border-style: none;
+                  padding: 0.2rem 1rem;
+                  margin: 0.5rem;
+                  border-radius: 5px;
+                  background-color: darkcyan;
+                  color: white;
+                  font-size: 2rem;
+                  font-weight: bold;
+                  &:active{
+                        transform: scale(0.9);
+                  }
+                  &:disabled{
+                        background-color: darkgray;
+                  }
+            }
+            
+            .counter-display__counter{
+                  
+                  padding: 1rem;
+                  margin: 0.5rem;
+                  font-size: 2rem;
+
+            }
+            
+            .counter-display__minus-button{
+                  border-style: none;
+                  padding: 0.2rem 1rem;
+                  margin: 0.5rem;
+                  border-radius: 5px;
+                  background-color: darkcyan;
+                  color: white;
+                  font-size: 2rem;
+                  font-weight: bold;
+
+                  &:active{
+                        transform: scale(0.9);
+                  }
+                  &:disabled{
+                        background-color: darkgray;
+                  }
+            }
+      }
+
+}

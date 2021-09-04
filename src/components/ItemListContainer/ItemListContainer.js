@@ -28,7 +28,7 @@ const ItemListContainer = () => {
                   })
                   .catch(err => console.log(err))
                   .finally(()=> setLoading(false));
-      },[catName])
+      },[catName, setLoading])
 
       return (  
             <div className = "ContenedorItemListContainer">

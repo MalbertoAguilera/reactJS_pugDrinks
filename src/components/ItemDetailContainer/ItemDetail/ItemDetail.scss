@@ -21,4 +21,29 @@
       .item-detail__description{
             color: gray;
       }
+
+      .item-detail__buttons{
+            .buttons__finish-buy{
+                  background-color: rgb(177, 37, 37);
+                  color: #fff;
+                  border-radius: 5px;
+                  padding: 10px;
+                  font-size: 1.5rem;
+
+                  &:active{
+                        transform: scale(0.9);
+                  }
+            }
+            .buttons__go-back{
+                  background-color: rgb(37, 149, 177);
+                  color: #fff;
+                  border-radius: 5px;
+                  padding: 10px;
+                  font-size: 1rem;
+
+                  &:active{
+                        transform: scale(0.9);
+                  }
+            }
+      }
 }

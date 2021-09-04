@@ -1,25 +1,20 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import { LOCAL_PATH, PATH_IMAGEN_STOCK } from "../../../utils/constants";
-import ItemCounter from "../../ItemCounter/index";
+import ItemCount from "../../ItemCount";
 import './ItemDetail.scss';
 
 const ItemDetail = ({id,name, price, thumbnailUrl, description, category, stock}) => {
 
-  // const {carrito, setCarrito} = useContext(CartContext);
-  
-  //   const onAdd = () =>{
-  //     const newItem = {name,price,category,amount};
-  //     setCarrito([...carrito, newItem]);
-  // }
-
   const {addItem} = useContext(CartContext);
+  const [enableBuy, setEnableBuy] = useState(true);
 
   const onAdd = (quantity) =>{
     const newItem = {id,name,price,category};
     addItem(newItem, quantity);
+    setEnableBuy(false);
   }
 
   return (
@@ -34,8 +29,16 @@ const ItemDetail = ({id,name, price, thumbnailUrl, description, category, stock}
           <Card.Text className="item-detail__precio">${price}</Card.Text>
           <Card.Text className="item-detail__description">{description}</Card.Text>
         </Card.Body>
-        <ItemCounter initial={1} stock={stock} onAdd={onAdd}/>
-        <Link className="btn btn-primary" to={`/category/${category}`}>Volver</Link>
+
+        <div className="item-detail__buttons">
+          {
+            enableBuy
+            ?<ItemCount initial={1} stock={stock} onAdd={onAdd}/>
+            :<div className="my-2"><Link className="btn buttons__finish-buy" to="/cart"> Finalizar Compra</Link></div>
+          }
+          <div className="my-3"><Link className="btn buttons__go-back" to={"/"}>Volver</Link></div>
+        </div>
+        
       </div>
   );
 };

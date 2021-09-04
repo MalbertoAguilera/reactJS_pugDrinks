@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
                   })
                   .catch(err => console.log(err))
                   .finally(() => setLoading(false))   
-      },[itemId])
+      },[itemId, setLoading])
 
       return (  
             <div className = "container itemDetailContainer">

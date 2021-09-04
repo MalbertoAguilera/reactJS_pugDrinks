@@ -11,14 +11,14 @@ const CartContextProvider = ({children}) => {
       
       const addItem = (item, quantity)=>{setCart([...cart, {...item, quantity}]);};
       
-      const deleteFromCart = (id) =>{setCart(cart.filter(item => item.id !== id));};
+      const removeItem = (id) =>{setCart(cart.filter(item => item.id !== id));};
 
       const amountCart = () => cart.reduce((acc,item)=>acc+item.amount,0);
 
-      const emptyCart= ()=>{ setCart([])};
+      const clear= ()=>{ setCart([])};
             
       return(
-            <CartContext.Provider value={{cart, addItem,deleteFromCart,amountCart, emptyCart}}>
+            <CartContext.Provider value={{cart, addItem,removeItem,amountCart, clear}}>
                   {children}
             </CartContext.Provider>
       );
