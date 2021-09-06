@@ -31,7 +31,7 @@ const CartContextProvider = ({children}) => {
       const isInCart = id => cart.some(item => item.id ===id);
             
       return(
-            <CartContext.Provider value={{cart, addItem,removeItem,quantityOfCart, clear}}>
+            <CartContext.Provider value={{cart, addItem,removeItem,quantityOfCart, clear,isInCart}}>
                   {children}
             </CartContext.Provider>
       );
