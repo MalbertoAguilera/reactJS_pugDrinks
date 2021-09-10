@@ -8,7 +8,7 @@ import "./BrandNav.scss";
 const BrandNav = () => {
   return (
     <Link to="/">
-      <Navbar.Brand className="contenedorLogo" href="#">
+      <Navbar.Brand className="contenedorLogo">
         <img className="imagenLogo" src={pathLogo} alt="Logo" />
         <div className="contenedorTitulo">
           <h1 className="tituloLogo">Pug Drinks</h1>
