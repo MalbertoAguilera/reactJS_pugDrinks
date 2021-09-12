@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import CartScreen from "./components/CartScreen";
+import Cart from "./components/Cart";
 import { Container } from "react-bootstrap";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
           </Route>
           <Route exact path="/cart">
             <Container>
-              <CartScreen />
+              <Cart />
             </Container>
           </Route>
           <Route path="*">
