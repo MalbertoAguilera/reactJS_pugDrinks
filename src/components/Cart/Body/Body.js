@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Item from './Item/Item'
 import { Container, Row } from "react-bootstrap";
 import "./Body.scss";
+import { CartContext } from "../../../context/CartContext";
 
-const Body = ({cart, removeItem}) => {
-      console.log(cart);
+const Body = () => {
+  const {cart, removeItem} = useContext(CartContext);
+
   return (
     <div className="cart-body">
       <Container>

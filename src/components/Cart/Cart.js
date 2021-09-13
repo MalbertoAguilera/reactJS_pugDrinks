@@ -8,25 +8,25 @@ import Body from "./Body";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, clear, removeItem, totalOfCart, quantityOfCart } = useContext(CartContext);
+  const { quantityOfCart } = useContext(CartContext);
 
   return (
-    
     <div className="container-cart">
-       {quantityOfCart() ? (
+      {quantityOfCart() ? (
         <div className="container-cart">
-          <Header clear={clear} />
-          <Body cart={cart} removeItem={removeItem} />
-          <Footer totalOfCart={totalOfCart} />
+          <Header />
+          <Body />
+          <Footer />
         </div>
       ) : (
-        <div>
+        <div style={{
+          fontSize: '50px'
+        }}>
           NO HAY ITEMS
           <Link to="/">COMENZAR COMPRA</Link>
         </div>
       )}
     </div>
-    
   );
 };
 

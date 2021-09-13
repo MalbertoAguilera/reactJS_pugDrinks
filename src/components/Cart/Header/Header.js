@@ -1,10 +1,13 @@
 
-import React from 'react';
+import React, {useContext} from 'react';
 import { Button } from 'react-bootstrap';
 import { FaTrashAlt } from "react-icons/fa";
+import { CartContext } from '../../../context/CartContext';
 import './Header.scss';
 
-const Header = ({clear}) => {
+const Header = () => {
+      const {clear} = useContext(CartContext);
+
       return (  
             <div className="cart-header container">
                   <Button className="cart-header__button" onClick={clear} >
