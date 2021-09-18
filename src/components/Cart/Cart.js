@@ -22,7 +22,6 @@ const Cart = () => {
         <div style={{
           fontSize: '50px'
         }}>
-          NO HAY ITEMS
           <Link to="/">COMENZAR COMPRA</Link>
         </div>
       )}
