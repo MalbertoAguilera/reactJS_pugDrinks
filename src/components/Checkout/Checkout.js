@@ -3,9 +3,10 @@ import { Redirect } from "react-router";
 import { CartContext } from "../../context/CartContext";
 import { createOrder } from "../../helpers/createOrder";
 import FormCheckOut from "./FormCheckOut";
+import Swal from 'sweetalert2';
 
 const Checkout = () => {
-  
+
   const { cart, totalOfCart, clear } = useContext(CartContext);
 
   const [values, setValues] = useState({
@@ -27,10 +28,20 @@ const Checkout = () => {
     if(values.name.length > 3 && values.email.length > 3 && values.phone.length > 5){
       createOrder(values, cart, totalOfCart)
         .then( res => {
-          alert(res);
+          Swal.fire({
+            icon: 'success',
+            title: 'Su compra fue registrada!',
+            text: `Guarde este identificador: ${res}`,
+            confirmButtonText: 'Finalizado'
+        })
           clear()
-        });
-        
+        })
+        .catch(error => {
+          console.log(error);
+          alert(`ERROR : sin stock`);
+          clear();
+        } );
+
     } else {
       alert("Campos invalidos");
     }
