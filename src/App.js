@@ -26,9 +26,7 @@ function App() {
             <Checkout/>
           </Route>
           <Route exact path="/cart">
-            <Container>
               <Cart />
-            </Container>
           </Route>
           <Route path="*">
             <Container>

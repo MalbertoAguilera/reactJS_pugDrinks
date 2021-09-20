@@ -4,6 +4,7 @@ import { CartContext } from "../../context/CartContext";
 import { createOrder } from "../../helpers/createOrder";
 import FormCheckOut from "./FormCheckOut";
 import Swal from 'sweetalert2';
+import './Checkout.scss';
 
 const Checkout = () => {
 
@@ -48,9 +49,7 @@ const Checkout = () => {
   };
 
   return (
-    <div>
-      <h2>Checkout</h2>
-      <hr/>
+    <div className="container container-checkout">
       {!cart.length ? (
         <Redirect to="/"/>
       ) : (

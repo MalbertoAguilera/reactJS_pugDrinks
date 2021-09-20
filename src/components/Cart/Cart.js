@@ -11,7 +11,7 @@ const Cart = () => {
   const { quantityOfCart } = useContext(CartContext);
 
   return (
-    <div className="container-cart">
+    <div className="container-cart container">
       {quantityOfCart() ? (
         <div className="container-cart">
           <Header />
