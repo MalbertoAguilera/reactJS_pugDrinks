@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/cart">
               <Cart />
           </Route>
-          <Route path="*">
+          <Route exact path="*">
             <Container>
               <h1>------------ERROR 404---------------</h1>
             </Container>
