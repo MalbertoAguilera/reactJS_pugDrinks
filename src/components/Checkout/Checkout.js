@@ -3,11 +3,11 @@ import { Redirect } from "react-router";
 import { CartContext } from "../../context/CartContext";
 import { createOrder } from "../../helpers/createOrder";
 import FormCheckOut from "./FormCheckOut";
-import Swal from 'sweetalert2';
-import './Checkout.scss';
+import Swal from "sweetalert2";
+import confirm from '../../assets/img/confirm.png'
+import "./Checkout.scss";
 
 const Checkout = () => {
-
   const { cart, totalOfCart, clear } = useContext(CartContext);
 
   const [values, setValues] = useState({
@@ -26,23 +26,29 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(values.name.length > 3 && values.email.length > 3 && values.phone.length > 5){
+    if (
+      values.name.length > 3 &&
+      values.email.length > 3 &&
+      values.phone.length > 5
+    ) {
       createOrder(values, cart, totalOfCart)
-        .then( res => {
+        .then((res) => {
           Swal.fire({
-            icon: 'success',
-            title: 'Su compra fue registrada!',
+            imageUrl: `${confirm}`,
+            imageWidth: 200,
+            imageHeight: 200,
+            imageAlt: "Pug Image",
+            title: "Su compra fue registrada!",
             text: `Guarde este identificador: ${res}`,
-            confirmButtonText: 'Finalizado'
+            confirmButtonText: "Finalizado",
+          });
+          clear();
         })
-          clear()
-        })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
           alert(`ERROR : sin stock`);
           clear();
-        } );
-
+        });
     } else {
       alert("Campos invalidos");
     }
@@ -51,7 +57,7 @@ const Checkout = () => {
   return (
     <div className="container container-checkout">
       {!cart.length ? (
-        <Redirect to="/"/>
+        <Redirect to="/" />
       ) : (
         <>
           <FormCheckOut
