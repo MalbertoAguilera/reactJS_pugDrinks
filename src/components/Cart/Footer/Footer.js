@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="cart-footer__total">TOTAL = ${totalOfCart()}</div>
       <div className="my-3">
         <Link className="btn cart-footer__btn" to="/checkout">
-          TERMINAR COMPRA
+          PROCESAR COMPRA
         </Link>
       </div>
     </div>

@@ -11,11 +11,12 @@ const ItemListContainer = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setLoading(true);
+
     const db = getFirestore();
     const itemCollection = db.collection("stock");
     const filterProducts = catName ? itemCollection.where('category', '==' , catName) : itemCollection;
-
+    
+    setLoading(true);
     filterProducts.get()
       .then(response => {
         const data = response.docs.map(doc => ({...doc.data(), id: doc.id}));
@@ -24,38 +25,6 @@ const ItemListContainer = () => {
       .catch(error => console.log(error))
       .finally(()=> setLoading(false));
 
-
-    // if(catName){
-    //   const filter = itemCollection.where('category', '==' , catName);
-    //   filter.get()
-    //     .then(response => {
-    //       const data = response.docs.map(doc => ({...doc.data(), id: doc.id}));
-    //       setData(data);
-    //     })
-    //     .catch((err) => console.log(err))
-    //     .finally(() => setLoading(false));
-      
-    // } else {
-    //   itemCollection.get()
-    //     .then(response => {
-    //       const data = response.docs.map( doc => ({...doc.data(), id: doc.id}));
-    //       setData(data);
-    //     })
-    //     .catch((err) => console.log(err))
-    //     .finally(() => setLoading(false));
-    // }
-
-    // getItems()
-    //       .then( res =>{
-    //             if(catName){
-    //                   const stockFiltered = res.filter(product => product.category === catName);
-    //                   setData(stockFiltered);
-    //             } else {
-    //                   setData(res);
-    //             }
-    //       })
-    //       .catch(err => console.log(err))
-    //       .finally(()=> setLoading(false));
   }, [catName, setLoading]);
 
   return (

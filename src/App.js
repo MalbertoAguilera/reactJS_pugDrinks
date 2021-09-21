@@ -5,7 +5,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
-import { Container } from "react-bootstrap";
+import Error404 from "./components/Error404";
 
 function App() {
   return (
@@ -28,10 +28,8 @@ function App() {
           <Route exact path="/cart">
               <Cart />
           </Route>
-          <Route exact path="*">
-            <Container>
-              <h1>------------ERROR 404---------------</h1>
-            </Container>
+          <Route path="*">
+            <Error404/>
           </Route>
         </Switch>
       </BrowserRouter>
