@@ -35,8 +35,8 @@ const Checkout = () => {
         .then((res) => {
           Swal.fire({
             imageUrl: `${confirm}`,
-            imageWidth: 200,
-            imageHeight: 200,
+            imageWidth: 300,
+            imageHeight: 300,
             imageAlt: "Pug Image",
             title: "Su compra fue registrada!",
             text: `Guarde este identificador: ${res}`,

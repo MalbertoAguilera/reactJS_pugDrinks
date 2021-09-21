@@ -12,9 +12,9 @@ const Cart = () => {
   const { quantityOfCart } = useContext(CartContext);
 
   return (
-    <div className="container-cart container">
+    <div className="container container-cart">
       {quantityOfCart() ? (
-        <div>
+        <div className="container-cart">
           <Header />
           <Body />
           <Footer />
@@ -23,7 +23,7 @@ const Cart = () => {
         <div className="container-empty">
           <img className="cart-image"alt="emptyCart" src={emptyCart}/>
           <p className="cart-text">CARRITO VACIO</p>
-          <div><Link className="cart-link btn" to="/">COMENZAR COMPRA</Link></div>
+          <div><Link className="cart-link btn" to="/">AGREGAR PRODUCTOS</Link></div>
         </div>
       )}
     </div>
