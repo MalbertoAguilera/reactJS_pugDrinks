@@ -14,26 +14,36 @@ const ItemListContainer = () => {
     setLoading(true);
     const db = getFirestore();
     const itemCollection = db.collection("stock");
+    const filterProducts = catName ? itemCollection.where('category', '==' , catName) : itemCollection;
 
-    if(catName){
-      const filter = itemCollection.where('category', '==' , catName);
-      filter.get()
-        .then(response => {
-          const data = response.docs.map(doc => ({...doc.data(), id: doc.id}));
-          setData(data);
-        })
-        .catch((err) => console.log(err))
-        .finally(() => setLoading(false));
+    filterProducts.get()
+      .then(response => {
+        const data = response.docs.map(doc => ({...doc.data(), id: doc.id}));
+        setData(data);
+      })
+      .catch(error => console.log(error))
+      .finally(()=> setLoading(false));
+
+
+    // if(catName){
+    //   const filter = itemCollection.where('category', '==' , catName);
+    //   filter.get()
+    //     .then(response => {
+    //       const data = response.docs.map(doc => ({...doc.data(), id: doc.id}));
+    //       setData(data);
+    //     })
+    //     .catch((err) => console.log(err))
+    //     .finally(() => setLoading(false));
       
-    } else {
-      itemCollection.get()
-        .then(response => {
-          const data = response.docs.map( doc => ({...doc.data(), id: doc.id}));
-          setData(data);
-        })
-        .catch((err) => console.log(err))
-        .finally(() => setLoading(false));
-    }
+    // } else {
+    //   itemCollection.get()
+    //     .then(response => {
+    //       const data = response.docs.map( doc => ({...doc.data(), id: doc.id}));
+    //       setData(data);
+    //     })
+    //     .catch((err) => console.log(err))
+    //     .finally(() => setLoading(false));
+    // }
 
     // getItems()
     //       .then( res =>{
