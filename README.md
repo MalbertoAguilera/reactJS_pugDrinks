@@ -39,6 +39,14 @@ Cuenta con:
 - React icons 
 - Firebase
 
+
+
+**Extra**
+
+Se implemento env.local para encriptar los datos personales de firebase.  Igualmente para esta entrega se dejaron las credenciales del proyecto y se comentaron las lineas de código que hacen uso del env.local
+
+
+
 ### Autor
 
 Aguilera Matias Alberto
