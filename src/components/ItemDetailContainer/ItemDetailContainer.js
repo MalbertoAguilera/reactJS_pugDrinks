@@ -21,7 +21,6 @@ const ItemDetailContainer = () => {
     item
       .get()
       .then((doc) => {
-        console.log(doc.exists);
         doc.exists ? setItem({ ...doc.data(), id: doc.id }) : setError404(true);
       })
       .catch((err) => console.log(err))

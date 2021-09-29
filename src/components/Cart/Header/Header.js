@@ -1,4 +1,3 @@
-
 import React, {useContext} from 'react';
 import { Button } from 'react-bootstrap';
 import { FaTrashAlt } from "react-icons/fa";
@@ -6,6 +5,7 @@ import { CartContext } from '../../../context/CartContext';
 import './Header.scss';
 
 const Header = () => {
+      
       const {clear} = useContext(CartContext);
 
       return (  

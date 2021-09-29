@@ -2,8 +2,7 @@ import React, {useContext} from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
-import { LOCAL_PATH, PATH_IMAGEN_STOCK } from "../../../utils/constants";
-import ItemCount from "../../ItemCount";
+import ItemCount from "../ItemCount";
 import './ItemDetail.scss';
 
 const ItemDetail = ({id,name, price, thumbnailUrl, description, category, stock}) => {
@@ -20,7 +19,8 @@ const ItemDetail = ({id,name, price, thumbnailUrl, description, category, stock}
         <Card.Img
           className="item-detail__imagen"
           variant="top"
-          src={`${LOCAL_PATH}/${PATH_IMAGEN_STOCK}/${thumbnailUrl}`}
+          src={thumbnailUrl}
+          alt={name}
         />
         <Card.Body className="item-detail__cardBody">
           <Card.Title className="item-detail__titulo">{name}</Card.Title>
@@ -34,7 +34,7 @@ const ItemDetail = ({id,name, price, thumbnailUrl, description, category, stock}
             ?<div className="my-2"><Link className="btn buttons__finish-buy" to="/cart"> Ir al carrito</Link></div>
             :<ItemCount initial={1} stock={stock} onAdd={onAdd}/>
           }
-          <div className="my-3"><Link className="btn buttons__go-back" to={"/"}>Volver</Link></div>
+          <div className="my-3"><Link className="btn buttons__go-back" to={"/"}>Continuar Comprando</Link></div>
         </div>
         
       </div>

@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-
-import "./Cart.scss";
 import Header from "./Header";
 import Footer from "./Footer";
 import Body from "./Body";
 import { Link } from "react-router-dom";
 import emptyCart from "../../assets/img/emptyCart.png"
+import "./Cart.scss";
 
 const Cart = () => {
+
   const { quantityOfCart } = useContext(CartContext);
 
   return (

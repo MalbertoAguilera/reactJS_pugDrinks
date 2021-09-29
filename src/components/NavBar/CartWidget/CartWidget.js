@@ -13,9 +13,11 @@ const CartWidget = () => {
         <Link to="/cart">
           <div className="contenedorCarrito">
             <FaCartArrowDown className="iconoCarrito" />
-            <span className="contenedorCarrito__contador">
-              {quantityOfCart()}
-            </span>
+            <div className="contenedorCarrito__contador">
+              <span>
+                {quantityOfCart()}
+              </span>
+            </div>
           </div>
         </Link>
       )}

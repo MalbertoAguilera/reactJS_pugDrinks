@@ -1,11 +1,24 @@
 .contenedorCarrito{
+      position: relative;
       .iconoCarrito{
             color: white;
             font-size: 5rem;
       }
 
       .contenedorCarrito__contador{
-            color: #fff;
-            font-size: 2rem;
+            width: 30px;
+            height: 30px;
+            margin: auto;
+            position: absolute;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            left: 80%;
+            top: -20%;
+
       }
 }

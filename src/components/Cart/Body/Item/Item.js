@@ -1,14 +1,13 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 import { FaWindowClose } from "react-icons/fa";
-import { LOCAL_PATH, PATH_IMAGEN_STOCK } from "../../../../utils/constants";
 import "./Item.scss";
 
 const Item = ({ id, name, price, quantity, thumbnailUrl, removeItem}) => {
   return (
     <>
       <Col xs={2} className="centrar-flex">
-        <img src={`${LOCAL_PATH}/${PATH_IMAGEN_STOCK}/${thumbnailUrl}`} alt={name} />
+        <img src={thumbnailUrl} alt={name}/>
       </Col>
       <Col xs={5} className="centrar-flex">
         <div>{name}</div>

@@ -23,14 +23,9 @@ export const createOrder = (buyer, cart, totalOfCart) => {
             query.docs.forEach(doc => {
                   const itemInCart = cart.find ( item => item.id === doc.id);
                   if(doc.data().stock >= itemInCart.quantity){
-                        batch.update(doc.ref, {
-                              stock: doc.data().stock - itemInCart.quantity
-                        })
+                        batch.update(doc.ref, {stock: doc.data().stock - itemInCart.quantity})
                   } else {
-                        outOfStock.push({
-                              id: doc.id, 
-                              ...doc.data()
-                        });
+                        outOfStock.push({ id: doc.id, ...doc.data()});
                   }
             });
 
@@ -38,17 +33,11 @@ export const createOrder = (buyer, cart, totalOfCart) => {
                   orders.add(newOrder)
                         .then(res => {
                               batch.commit();
-                              resolve(res.id)})
+                              resolve(res.id);
+                        })
                         .catch(error => reject (error));
             } else {
-                  reject({
-                        error: "Productos sin Stock",
-                        items: outOfStock
-                  })
-            }
-      
-            
-                  
+                  reject(outOfStock);
+            }            
       })
-
 }
